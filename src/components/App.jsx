@@ -1,5 +1,5 @@
 import '../css/App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Todo from './Todo';
 import TodoList from './TodoList';
 
@@ -8,7 +8,16 @@ function App() {
   
   const [todos, setTodos] = useState([]);
 
+  useEffect(() =>{
+    const data = JSON.parse(localStorage.getItem('todos'));
+    if(data){
+      setTodos(data);
+    }
+  }, [])
  
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos])
   
   return (
     <div>

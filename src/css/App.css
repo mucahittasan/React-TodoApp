@@ -29,3 +29,9 @@ h1{
     opacity: 0.1;
     z-index: -999;
 }
+
+.active{
+    text-decoration: line-through;
+    color: gray;
+    transition: 300ms all ease-in-out;
+}

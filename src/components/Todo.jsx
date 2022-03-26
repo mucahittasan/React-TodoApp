@@ -19,7 +19,7 @@ const Todo = ({setTodos, todos}) => {
         if(todoValue.trim() === '') {
             return todoEmpty();
         }else{
-            setTodos([...todos, todoValue])
+            setTodos([...todos, {text:todoValue, completed:false}])
             setTodoValue('');
         }
     }

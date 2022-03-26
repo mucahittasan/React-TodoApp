@@ -17,12 +17,13 @@ const TodoItem = ({todo, index, todos, setTodos}) => {
         todoDeleted();
     }
 
+ 
 
 
   return (
       <li key={index} className="todo-item">
       <ToastContainer />
-            <p onClick={(e) => setCheck(!check)}>{todo}</p>
+            <p className={check ? 'active' : ''} onClick={() => setCheck(!check) }>{todo.text}</p>
             <button onClick={() => deleteItem(index)}>
                 <i className="fa-solid fa-xmark"></i>
             </button>
